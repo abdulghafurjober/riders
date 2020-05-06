@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
   <a href="index3.html" class="brand-link">
-    <span class="brand-text font-weight-light">Ferry Ticketing System</span>
+    <span class="brand-text font-weight-light">Riders System</span>
   </a>
 <!-- Sidebar -->
   <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 652px;"><div class="sidebar" style="min-height: 652px; overflow: hidden; width: auto; height: 652px;">
@@ -28,9 +28,9 @@
         </li>
 
         <li class="nav-item has-treeview">
-        <a class="nav-link <%= controller_name == 'booking' ? 'active' : nil%>" href="/booking" data-no-turbolink='true'>
+        <a class="nav-link <%= controller_name == 'assignment' ? 'active' : nil%>" href="/assignment" data-no-turbolink='true'>
             <i class="nav-icon fas fa-book"></i> 
-            <p>Bookings</p>
+            <p>Assignments</p>
             <i class="fas fa-angle-left right"></i>
         </a>
         <!--
@@ -44,15 +44,15 @@
         -->
           <ul class="nav nav-treeview">
             <li class="nav-item">
-                <a href="./booking/index" class="nav-link">
+                <a href="./assignment/index" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-              <p>Booking Listings</p>
+              <p>Assignment Listings</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="./booking/index2" class="nav-link">
+              <a href="./assignment/index2" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>New Booking</p>
+                <p>Add Assignment</p>
               </a>
             </li>
           </ul>
@@ -61,23 +61,23 @@
           <a href="#" class="nav-link">
           <i class="nav-icon fas fa-users"></i>
             <p>
-              Customer
+              Riders
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./customer/index" class="nav-link">
+              <a href="./rider/index" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Customer Lists</p>
+                <p>Riders Lists</p>
               </a>
             </li>
           </ul>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/customer/index2" class="nav-link">
+              <a href="/rider/index2" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>New Customer</p>
+                <p>Add Riders</p>
               </a>
             </li>
           </ul>
