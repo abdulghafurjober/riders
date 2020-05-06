@@ -28,7 +28,7 @@
         </li>
 
         <li class="nav-item has-treeview">
-        <a class="nav-link <%= controller_name == 'assignment' ? 'active' : nil%>" href="/assignment" data-no-turbolink='true'>
+        <a class="nav-link <%= controller_name == 'assignment' ? 'active' : nil%>" href="/">
             <i class="nav-icon fas fa-book"></i> 
             <p>Assignments</p>
             <i class="fas fa-angle-left right"></i>
@@ -58,7 +58,7 @@
           </ul>
         </li>
         <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
+          <a href="#" class="nav-link <%= controller_name == 'rider' ? 'active' : nil%>">
           <i class="nav-icon fas fa-users"></i>
             <p>
               Riders
