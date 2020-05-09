@@ -1,12 +1,6 @@
 <div class="card">
     <div class="card-header border-transparent">
-    <h3 class="card-title">Rider Lists</h3>
-
-    <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-        <i class="fas fa-minus"></i>
-        </button>
-    </div>
+        <h3 class="card-title">Rider Lists</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body p-0">
@@ -21,18 +15,22 @@
             <th>Rider IC Number</th>
             <th>Status</th>
             <th></th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><a href="#">1</a></td>
-                <td>Hafiz</a></td>
-                <td>0123334444</td>
-                <td>Klang</td>
-                <td>850501015563</td>                       
-                <td><span class="badge badge-success">Active</span></td>
-                <td><a href="./show"><button class="btn-info">Show</button></a></td>
-            </tr> 
+            <% @riders.each do |rider| %>
+                <tr>
+                    <td><a href= 'riders/<%= rider.id %>'><%= rider.id %></a></td>
+                    <td><%= rider.name %></td>
+                    <td><%= rider.phone %></td>
+                    <td><%= rider.location %></td>
+                    <td><%= rider.ic %></td>                       
+                    <td><span class="badge badge-success"><%= rider.status %></span></td>
+                    <td><%= link_to 'Show', rider  ,class: 'btn btn-info '%></td>
+                    <td><%= link_to 'Destroy', rider, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger'%></td>
+                </tr> 
+            <% end %>
         </tbody>
         </table>
     </div>
@@ -40,7 +38,7 @@
     </div>
     <!-- /.card-body -->
     <div class="card-footer clearfix">
-    <a href="#" class="btn btn-sm btn-info float-left">Add New Rider</a>
+        <!-- link_to 'Show', rider_path , class: 'btn btn-info'% -->
     </div>
     <!-- /.card-footer -->
 </div>
