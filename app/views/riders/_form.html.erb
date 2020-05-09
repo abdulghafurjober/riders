@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">IC Number</label>
-                    <%= form.text_field :IC, placeholder: 'Name'%>
+                    <%= form.text_field :ic, placeholder: 'Name'%>
                 </div>
                 <div class="form-group">
                     <label for="">Phone Number</label>
@@ -32,12 +32,7 @@
                         <!-- select -->
                     <div class="form-group">
                         <label>Select Status</label>
-                        <select class="form-control">
-                            <option>Active</option>
-                            <option>Quit</option>
-                            <option>On Leave</option>
-                            <option>Not Available</option>
-                        </select>
+                        <%= form.select :status, options_for_select([['Active'],['Quit'], ['On Leave'], ['Others']], @rider.present? ? @rider.status : nil),{}, placeholder: 'Status'%>
                     </div>
                 </div>
                 <div class="form-group">
