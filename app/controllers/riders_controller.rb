@@ -69,6 +69,6 @@ class RidersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def rider_params
-      params.require(:rider).permit(:name, :ic, :phone, :location, :status, :picture, :bankacc, :bankname)
+      params.require(:rider).permit(:name, :ic, :phone, :location, :status, :image, :bankacc, :bankname)
     end
 end

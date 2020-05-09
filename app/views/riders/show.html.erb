@@ -8,25 +8,24 @@
     <!-- /.card-header -->
 <div class="col-12">
     <!-- form start -->
-
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
                 <div class="">
                     <label for="">Name</label>
-                    <p class="text-secondary">Hafiz</p>
+                    <p class="text-secondary"><%= @rider.name %></p>
                 </div>
                 <div class="">
                     <label for="">IC Number</label>
-                    <p class="text-secondary">850505105563</p>
+                    <p class="text-secondary"><%= @rider.ic %></p>
                 </div>
                 <div class="">
                     <label for="">Phone Number</label>
-                    <p class="text-secondary">0123334444</p>
+                    <p class="text-secondary"><%= @rider.phone %></p>
                 </div>
                 <div class="">
                     <label for="">Location</label>
-                    <p class="text-secondary">Klang</p>
+                    <p class="text-secondary"><%= @rider.location %></p>
                 </div>
                 </div>
                 <div class="col-6">
@@ -34,13 +33,14 @@
                         <!-- select -->
                     <div class="form-group">
                         <label>Status</label>
-                       <p class="text-secondary">Available</p>
+                       <p class="text-secondary"><%= @rider.status %></p>
                     </div>
                 </div>
                 <div class="">
                     <label for="exampleInputFile">IC Picture</label>
                     <div>
-                        <img src="https://www.rogerclarke.com/DV/MyKad.gif">
+                        <img src="<%= @rider.image %>" alt="Rider IC Picture" height="180">
+                        
                     </div>
                 </div>
                 </div><!-- col-6 -->
@@ -54,10 +54,10 @@
                 </div>
                 <div class="col-4">
                     <td>
-                        <button type="Edit" class="btn btn-secondary">Edit Details</button>
+                        <%= link_to 'Edit', edit_rider_path(@rider) , class: "btn btn-secondary"%> 
                     </td>
                     <td>
-                        <button type="delete" class="btn btn-danger">Delete</button>
+                        <%= link_to 'Back', riders_path, class: "btn btn-info"%>
                     </td>
                 </div>
                 <div class="col-4">
