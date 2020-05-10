@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vendor_name: MyString
+  vendor_phone: MyString
+  vendor_email: MyString
+  customer_name: MyString
+  customer_phone: MyString
+  pickup_address: MyString
+  dropoff_address: MyString
+  assignment_type: MyString
+  task: MyString
+  rider_name: MyString
+  extra_notes: MyString
+
+two:
+  vendor_name: MyString
+  vendor_phone: MyString
+  vendor_email: MyString
+  customer_name: MyString
+  customer_phone: MyString
+  pickup_address: MyString
+  dropoff_address: MyString
+  assignment_type: MyString
+  task: MyString
+  rider_name: MyString
+  extra_notes: MyString

@@ -1,0 +1,85 @@
+<!-- general form elements -->
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Assignment Details</h3>
+    </div>
+    <!-- /.card-header -->
+<div class="col-12">
+    <!-- form start -->
+        <div class="card-body">
+        <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="">Assignment ID</label>
+                <p class="text-secondary"><%= @assignment.id %></p>
+            </div>
+            <div class="form-group">
+                <label for="">Customer Name</label>
+                <p class="text-secondary"><%= @assignment.customer_name %></p>
+            </div>
+            <div class="form-group">
+                <label for="">Customer Phone Number</label>
+                <p class="text-secondary"><%= @assignment.customer_phone %></p>
+            </div>
+            <div class="form-group">
+                <label for="">Pick Up Address</label>
+                <p class="text-secondary"><%= @assignment.pickup_address %></p>
+            </div>
+              <div class="form-group">
+                <label>Drop Off Address</label>
+                <p class="text-secondary"><%= @assignment.dropoff_address %></p>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label>Vendor Name</label>
+                <p class="text-secondary"><%= @assignment.vendor_name %></p>
+            </div>
+                    <!-- select -->
+            <div class="form-group">
+                <label>Vendor Phone</label>
+               <p class="text-secondary"><%= @assignment.vendor_phone %></p>
+            </div>
+            <div class="form-group">
+                <label>Assignment Type</label>
+                <p class="text-secondary"><%= @assignment.assignment_type %></p>
+            </div>
+            <div class="form-group">
+                <label>Task</label>
+                <p class="text-secondary"><%= @assignment.task %></p>
+            </div>
+             <div class="form-group">
+                <label>Rider Assigned</label>
+                <p class="text-secondary"><%= @assignment.rider_name %></p>
+            </div>
+            <div class="form-group">
+                <label>Extra Notes for Rider</label>
+                <p class="text-secondary">M<%= @assignment.extra_notes %></p>
+            </div>
+            <div class="form-group">
+                <label>Delivery Status</label>
+                <p class="text-secondary"><%= @assignment.delivery_status %></p>
+            </div>
+            
+        </div>
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-4">
+                </div>
+                <div class="col-4">
+                    <td>
+                        <%= link_to 'Edit', edit_assignment_path(@assignment) , class: 'btn btn-secondary'%>
+                    </td>
+                    <td>
+                        <%= link_to 'Destroy', assignment_path, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger' %>
+                    </td>
+                </div>
+                <div class="col-4">
+                </div>
+            </div>
+        </div>
+</div>
+</div>

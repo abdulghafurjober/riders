@@ -1,0 +1,50 @@
+<div class="card">
+    <div class="card-header border-transparent">
+        <h3 class="card-title">Rider Lists</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+    <div class="table-responsive">
+        <table class="table m-0">
+        <thead>
+        <!-- permit(:4vendor_name, 6:vendor_phone, :vendor_email, :customer_name, :customer_phone,
+         :pickup_address, :dropoff_address, :assignment_type, :task, :rider_name, :extra_notes)-->
+        <tr>
+            <th>ID</th>
+            <th>Vendor Name</th> 
+            <th>Vendor Phone</th>
+            <th>Pick Up Address</th>
+            <th>Drop Off Address</th>
+            <th>Customer Name</th>
+            <th>Customer Phone</th>
+            <th>Delivery Status</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @assignments.each do |assignment| %>
+            <tr>
+                <td><a href="./assignments/<%= assignment.id %>"><%= assignment.id %></td>
+                <td><%= assignment.vendor_name %></td>
+                <td><%= assignment.vendor_phone %></td>
+                <td><%= assignment.pickup_address %></td>
+                <td><%= assignment.dropoff_address %></td>
+                <td><%= assignment.customer_name %></td>
+                <td><%= assignment.customer_phone %></td>                 
+                <td><span class="badge badge-success">Completed</span><%= assignment.delivery_status %></td>
+                <td><a href="./assignments/<%= assignment.id %>"><button class="btn-info">Show</button></a></td>
+            </tr> 
+        <% end %>
+        </tbody>
+        </table>
+    </div>
+    <!-- /.table-responsive -->
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer clearfix">
+    <a href="./assignments/new" class="btn btn-sm btn-info float-left">Add New Assignment</a>
+    </div>
+    <!-- /.card-footer -->
+</div>
+<!-- /.card -->
+</div>

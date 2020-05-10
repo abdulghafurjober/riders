@@ -1,0 +1,85 @@
+<%= form_with(model: assignment, local: true) do |form| %>
+  <% if assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
+
+      <ul>
+        <% assignment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Assignment Registration</h3>
+        </div>
+        <!-- /.card-header -->
+    <div class="col-12">
+        <!-- form start -->
+        <form role="form">
+            <div class="card-body">
+            <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="">Customer Name</label>
+                    <%= form.text_field :customer_name %>
+                </div>
+                <div class="form-group">
+                    <label for="">Customer Phone</label>
+                    <%= form.text_field :customer_phone %>
+                </div>
+                <div class="form-group">
+                    <label for="">Pick Up Address</label>
+                    <%= form.text_area :pickup_address %>
+                </div>
+                <div class="form-group">
+                    <label for="">Drop Off Address</label>
+                    <%= form.text_area :dropoff_address %>
+                </div>
+                <div class="form-group">
+                    <label for="">Vendor Name</label>
+                    <%= form.text_field :vendor_name %>
+                </div>
+                <div class="form-group">
+                    <label for="">Vendor Phone Number</label>
+                    <%= form.text_field :vendor_phone %>
+                </div>
+                <div class="form-group">
+                    <label for="">Vendor Email Address</label>
+                    <%= form.text_field :vendor_email %>
+                </div>
+                <div class="form-group">
+                    <label>Assignment Type</label>
+                <%= form.select :assignment_type, options_for_select([['Food Delivery'],['Runner'], ['Others']], @assignment.present? ? @assignment.assignment_type : nil),{}, placeholder: 'Assignment' ,class: ''%>
+                </div>
+            </div>
+            <div class="col-6">
+                        <!-- select -->
+                <div class="form-group">
+                    <label>Select Rider</label>
+                    <select class="form-control">
+                        <option>Rider 1</option>
+                        <option>Rider 2</option>
+                        <option>Rider 3</option>
+                        <option>Rider 4</option>
+                        <option>Rider 5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Extra Notes for Rider</label>
+                    <%= form.text_field :extra_notes %>
+                </div>
+            </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="actions">
+    <%= form.submit %>
+  </div>
+
+        </form>
+    </div>
+    </div>
+<% end %>
