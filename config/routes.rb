@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   resources :assignments
   #get "assignments/new" => "assignments#new"
   get 'rider/index2'
-  get 'report/index'
-  get 'report/index2'
+
 end

@@ -1,42 +1,40 @@
 <div class="card">
     <div class="card-header border-transparent">
-    <h3 class="card-title">Rider Lists</h3>
-
-    <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-        <i class="fas fa-minus"></i>
-        </button>
-    </div>
+        <h3 class="card-title">Rider Lists</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body p-0">
     <div class="table-responsive">
         <table class="table m-0">
         <thead>
+        <!-- permit(:4vendor_name, 6:vendor_phone, :vendor_email, :customer_name, :customer_phone,
+         :pickup_address, :dropoff_address, :assignment_type, :task, :rider_name, :extra_notes)-->
         <tr>
             <th>ID</th>
-            <th>Delivery Date</th>
-            <th>Delivery Order</th>
-            <th>Vendor Name</th>
-            <th>Vendor Address</th>
+            <th>Vendor Name</th> 
             <th>Vendor Phone</th>
-            <th>Rider</th>
-            <th>Status</th>
+            <th>Pick Up Address</th>
+            <th>Drop Off Address</th>
+            <th>Customer Name</th>
+            <th>Customer Phone</th>
+            <th>Delivery Status</th>
             <th></th>
         </tr>
         </thead>
         <tbody>
+        <% @assignments.each do |assignment| %>
             <tr>
-                <td><a href="#">1001</a></td>
-                <td>12 Mei 2020</a></td>
-                <td>Food Delivery</td>
-                <td>Najib</td>
-                <td>Precint 3, Putrajaya</td>
-                <td>012333444</td>
-                <td>Hafiz</td>                 
-                <td><span class="badge badge-success">Completed</span></td>
-                <td><a href="./show"><button class="btn-info">Show</button></a></td>
+                <td><a href="./assignments/<%= assignment.id %>"><%= assignment.id %></td>
+                <td><%= assignment.vendor_name %></td>
+                <td><%= assignment.vendor_phone %></td>
+                <td><%= assignment.pickup_address %></td>
+                <td><%= assignment.dropoff_address %></td>
+                <td><%= assignment.customer_name %></td>
+                <td><%= assignment.customer_phone %></td>                 
+                <td><span class="badge badge-success">Completed</span><%= assignment.delivery_status %></td>
+                <td><a href="./assignments/<%= assignment.id %>"><button class="btn-info">Show</button></a></td>
             </tr> 
+        <% end %>
         </tbody>
         </table>
     </div>
@@ -44,7 +42,7 @@
     </div>
     <!-- /.card-body -->
     <div class="card-footer clearfix">
-    <a href="#" class="btn btn-sm btn-info float-left">Add New Assignment</a>
+    <a href="./assignments/new" class="btn btn-sm btn-info float-left">Add New Assignment</a>
     </div>
     <!-- /.card-footer -->
 </div>
