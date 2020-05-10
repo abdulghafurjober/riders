@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="card-header border-transparent">
+        <h3 class="card-title">Rider Lists</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+    <div class="table-responsive">
+        <table class="table m-0">
+        <thead>
+        <tr>
+            <th>Number</th>
+            <th>Rider Name</th>
+            <th>Rider Phone</th>
+            <th>Location</th>
+            <th>Rider IC Number</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            <% @riders.each do |rider| %>
+                <tr>
+                    <td><a href= 'riders/<%= rider.id %>'><%= rider.id %></a></td>
+                    <td><%= rider.name %></td>
+                    <td><%= rider.phone %></td>
+                    <td><%= rider.location %></td>
+                    <td><%= rider.ic %></td>                       
+                    <td><span class="badge badge-success"><%= rider.status %></span></td>
+                    <td><%= link_to 'Show', rider  ,class: 'btn btn-info '%></td>
+                    <td><%= link_to 'Destroy', rider, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger'%></td>
+                </tr> 
+            <% end %>
+        </tbody>
+        </table>
+    </div>
+    <!-- /.table-responsive -->
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer clearfix">
+        <!-- link_to 'Show', rider_path , class: 'btn btn-info'% -->
+    </div>
+    <!-- /.card-footer -->
+</div>
+<!-- /.card -->
+</div>

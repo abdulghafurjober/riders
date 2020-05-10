@@ -1,0 +1,71 @@
+
+
+<!-- general form elements -->
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Riders Details</h3>
+    </div>
+    <!-- /.card-header -->
+<div class="col-12">
+    <!-- form start -->
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6">
+                <div class="">
+                    <label for="">Name</label>
+                    <p class="text-secondary"><%= @rider.name %></p>
+                </div>
+                <div class="">
+                    <label for="">IC Number</label>
+                    <p class="text-secondary"><%= @rider.ic %></p>
+                </div>
+                <div class="">
+                    <label for="">Phone Number</label>
+                    <p class="text-secondary"><%= @rider.phone %></p>
+                </div>
+                <div class="">
+                    <label for="">Location</label>
+                    <p class="text-secondary"><%= @rider.location %></p>
+                </div>
+                </div>
+                <div class="col-6">
+                <div class="">
+                        <!-- select -->
+                    <div class="form-group">
+                        <label>Status</label>
+                       <p class="text-secondary"><%= @rider.status %></p>
+                    </div>
+                </div>
+                <div class="">
+                    <label for="exampleInputFile">IC Picture</label>
+                    <div>
+                        <img src="<%= @rider.image %>" alt="Rider IC Picture" height="180">
+                        
+                    </div>
+                </div>
+                </div><!-- col-6 -->
+            </div> <!-- row -->
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-4">
+                </div>
+                <div class="col-4">
+                    <td>
+                        <%= link_to 'Edit', edit_rider_path(@rider) , class: "btn btn-secondary"%> 
+                    </td>
+                    <td>
+                        <%= link_to 'Back', riders_path, class: "btn btn-info"%>
+                    </td>
+                </div>
+                <div class="col-4">
+                </div>
+            </div>
+        </div>
+</div><!-- col-12 close -->
+</div>
+
+
+<!------------------------------ -->

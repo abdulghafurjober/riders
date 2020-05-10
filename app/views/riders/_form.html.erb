@@ -1,0 +1,75 @@
+<!-- general form elements -->
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Riders Registration</h3>
+    </div>
+    <!-- /.card-header -->
+<div class="col-12">
+    <!-- form start -->
+    <form role="form">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6">
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <%= form.text_field :name, placeholder: 'Name'%>
+                </div>
+                <div class="form-group">
+                    <label for="">IC Number</label>
+                    <%= form.text_field :ic, placeholder: 'Name'%>
+                </div>
+                <div class="form-group">
+                    <label for="">Phone Number</label>
+                    <%= form.text_field :phone, placeholder: 'Name'%>
+                </div>
+                <div class="form-group">
+                    <label for="">Location</label>
+                    <%= form.text_field :location, placeholder: 'Name'%>
+                </div>
+                </div>
+                <div class="col-6">
+                <div class="form-group">
+                        <!-- select -->
+                    <div class="form-group">
+                        <label>Select Status</label>
+                        <%= form.select :status, options_for_select([['Active'],['Quit'], ['On Leave'], ['Others']], @rider.present? ? @rider.status : nil),{}, placeholder: 'Status'%>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">IC Picture</label>
+                  <%= form.file_field :image %>
+                    <div class="form-group">
+                    <label for="">Bank Account Number</label>
+                    <%= form.text_field :bankacc, placeholder: 'Bank Account Number'%>
+                </div>
+                <div class="form-group">
+                    <label for="">Bank Account Name</label>
+                    <%= form.text_field :bankname, placeholder: 'Bank Account Name'%>
+                </div>
+                </div>
+                </div><!-- col-6 -->
+            </div> <!-- row -->
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            
+        </div>
+         <div class="card-footer">
+            <div class="row">
+                <div class="col-4">
+                </div>
+                <div class="col-4">
+                    <td>
+                        <%= form.submit 'Submit', class: 'btn btn-primary' %>
+                        <%= link_to 'Show', @rider, class: 'btn btn-info' %>
+                        <%= link_to 'Back', riders_path, class: 'btn btn-secondary' %>
+                    </td>
+                </div>
+                <div class="col-4">
+                </div>
+            </div>
+        </div>
+    </form>
+</div><!-- col-12 close -->
+</div>
