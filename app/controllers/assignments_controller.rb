@@ -5,6 +5,7 @@ class AssignmentsController < ApplicationController
     # GET /assignments.json
     def index
       @assignments = Assignment.all
+      #@assignments_count = Assignment.all.size
     end
   
     # GET /assignments/1
@@ -69,7 +70,7 @@ class AssignmentsController < ApplicationController
   
       # Only allow a list of trusted parameters through.
       def assignment_params
-        params.require(:assignment).permit(:vendor_name, :vendor_phone, :vendor_email, :customer_name, :customer_phone, :pickup_address, :dropoff_address, :assignment_type, :task, :rider_name, :extra_notes, :delivery_status)
+        params.require(:assignment).permit(:vendor_name, :vendor_phone, :vendor_email, :customer_name, :customer_phone, :pickup_address, :dropoff_address, :assignment_type, :task, :rider_id, :extra_notes, :delivery_status)
       end
   end
   

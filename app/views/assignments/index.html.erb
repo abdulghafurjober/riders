@@ -31,7 +31,7 @@
                 <td><%= assignment.dropoff_address %></td>
                 <td><%= assignment.customer_name %></td>
                 <td><%= assignment.customer_phone %></td>                 
-                <td><span class="badge badge-success"><%= assignment.delivery_status %></span></td>
+                <td><span class="badge <% assignment.delivery_status%>"><%= assignment.delivery_status %></span></td>
                 <td><a href="./assignments/<%= assignment.id %>"><button class="btn-info">Show</button></a></td>
             </tr> 
         <% end %>

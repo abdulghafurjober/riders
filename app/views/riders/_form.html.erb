@@ -12,19 +12,23 @@
                 <div class="col-6">
                 <div class="form-group">
                     <label for="">Name</label>
-                    <%= form.text_field :name, placeholder: 'Name', class: 'form-control'%>
+                    <%= form.text_field :name, class: 'form-control'%>
                 </div>
                 <div class="form-group">
                     <label for="">IC Number</label>
-                    <%= form.text_field :ic, placeholder: 'Name', class: 'form-control'%>
+                    <%= form.text_field :ic , class: 'form-control'%>
                 </div>
                 <div class="form-group">
                     <label for="">Phone Number</label>
-                    <%= form.text_field :phone, placeholder: 'Name', class: 'form-control'%>
+                    <%= form.text_field :phone, class: 'form-control'%>
                 </div>
                 <div class="form-group">
-                    <label for="">Location</label>
-                    <%= form.text_field :location, placeholder: 'Name', class: 'form-control'%>
+                    <label for="">Address</label>
+                    <%= form.text_area :location, class: 'form-control'%>
+                </div>
+                <div class="form-group">
+                    <label for="">Coverage Location</label>
+                    <%= form.text_field :coverage_location, class: 'form-control'%>
                 </div>
                 </div>
                 <div class="col-6">

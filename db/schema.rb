@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_05_10_050640) do
+ActiveRecord::Schema.define(version: 2020_05_11_031508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_050640) do
     t.string "dropoff_address"
     t.string "assignment_type"
     t.string "task"
-    t.string "rider_name"
+    t.string "rider_id"
     t.string "extra_notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -44,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_050640) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
+    t.string "coverage_location"
   end
 
   create_table "users", force: :cascade do |t|
