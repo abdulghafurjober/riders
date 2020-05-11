@@ -30,9 +30,10 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-success">
+            <div class="small-box bg-warning">
               <div class="inner">
-                <p>Bounce Rate</p>
+              <h3><%=  Rider.count %></h3>
+                <p>Total Rider Registered</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -43,11 +44,10 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-success">
               <div class="inner">
-                <h3>44</h3>
-
-                <p>User Registrations</p>
+                <h3><%= Assignment.count { |assignment| assignment.delivery_status=='Completed' } %></h3>
+                <p>Completed Assignment</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -60,9 +60,8 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
-
-                <p>Unique Visitors</p>
+                <h3><%= Assignment.count { |assignment| assignment.delivery_status !='Completed' } %></h3>
+                <p>Not Completed Assignment</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
