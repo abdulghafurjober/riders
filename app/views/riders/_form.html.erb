@@ -12,19 +12,19 @@
                 <div class="col-6">
                 <div class="form-group">
                     <label for="">Name</label>
-                    <%= form.text_field :name, placeholder: 'Name'%>
+                    <%= form.text_field :name, placeholder: 'Name', class: 'form-control'%>
                 </div>
                 <div class="form-group">
                     <label for="">IC Number</label>
-                    <%= form.text_field :ic, placeholder: 'Name'%>
+                    <%= form.text_field :ic, placeholder: 'Name', class: 'form-control'%>
                 </div>
                 <div class="form-group">
                     <label for="">Phone Number</label>
-                    <%= form.text_field :phone, placeholder: 'Name'%>
+                    <%= form.text_field :phone, placeholder: 'Name', class: 'form-control'%>
                 </div>
                 <div class="form-group">
                     <label for="">Location</label>
-                    <%= form.text_field :location, placeholder: 'Name'%>
+                    <%= form.text_field :location, placeholder: 'Name', class: 'form-control'%>
                 </div>
                 </div>
                 <div class="col-6">
@@ -32,19 +32,19 @@
                         <!-- select -->
                     <div class="form-group">
                         <label>Select Status</label>
-                        <%= form.select :status, options_for_select([['Active'],['Quit'], ['On Leave'], ['Others']], @rider.present? ? @rider.status : nil),{}, placeholder: 'Status'%>
+                        <%= form.select :status, options_for_select([['Active'],['Quit'], ['On Leave'], ['Others']], @rider.present? ? @rider.status : nil),{}, placeholder: 'Status', class: 'form-control'%>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputFile">IC Picture</label>
-                  <%= form.file_field :image %>
+                    <%= form.file_field :image , class: 'form-control'%>
                     <div class="form-group">
                     <label for="">Bank Account Number</label>
-                    <%= form.text_field :bankacc, placeholder: 'Bank Account Number'%>
+                    <%= form.text_field :bankacc, placeholder: 'Bank Account Number', class: 'form-control'%>
                 </div>
                 <div class="form-group">
                     <label for="">Bank Account Name</label>
-                    <%= form.text_field :bankname, placeholder: 'Bank Account Name'%>
+                    <%= form.text_field :bankname, placeholder: 'Bank Account Name', class: 'form-control'%>
                 </div>
                 </div>
                 </div><!-- col-6 -->
@@ -53,9 +53,6 @@
         <!-- /.card-body -->
 
         <div class="card-footer">
-            
-        </div>
-         <div class="card-footer">
             <div class="row">
                 <div class="col-4">
                 </div>

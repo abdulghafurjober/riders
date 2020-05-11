@@ -22,41 +22,51 @@
         <form role="form">
             <div class="card-body">
             <div class="row">
-            <div class="col-6">
+            <div class="col-4">
                 <div class="form-group">
                     <label for="">Customer Name</label>
-                    <%= form.text_field :customer_name %>
+                    <%= form.text_field :customer_name ,class: 'form-control' %>
                 </div>
                 <div class="form-group">
                     <label for="">Customer Phone</label>
-                    <%= form.text_field :customer_phone %>
+                    <%= form.text_field :customer_phone ,class: 'form-control' %>
                 </div>
                 <div class="form-group">
                     <label for="">Pick Up Address</label>
-                    <%= form.text_area :pickup_address %>
+                    <%= form.text_area :pickup_address , class: 'form-control'%>
                 </div>
                 <div class="form-group">
                     <label for="">Drop Off Address</label>
-                    <%= form.text_area :dropoff_address %>
+                    <%= form.text_area :dropoff_address , class: 'form-control'%>
                 </div>
+                </div>
+                <div class="col-4">
+
                 <div class="form-group">
                     <label for="">Vendor Name</label>
-                    <%= form.text_field :vendor_name %>
+                    <%= form.text_field :vendor_name , class: 'form-control'%>
                 </div>
                 <div class="form-group">
                     <label for="">Vendor Phone Number</label>
-                    <%= form.text_field :vendor_phone %>
+                    <%= form.text_field :vendor_phone , class: 'form-control'%>
                 </div>
                 <div class="form-group">
                     <label for="">Vendor Email Address</label>
-                    <%= form.text_field :vendor_email %>
+                    <%= form.text_field :vendor_email , class: 'form-control'%>
+                </div>
+               
+             <div class="form-group">
+                    <label>Assignment Type</label>
+                    <%= form.select :assignment_type, options_for_select([['Food Delivery'],['Runner'], ['Others']], @assignment.present? ? @assignment.assignment_type : nil),{}, placeholder: 'Assignment' ,class: 'form-control'%>
                 </div>
                 <div class="form-group">
-                    <label>Assignment Type</label>
-                <%= form.select :assignment_type, options_for_select([['Food Delivery'],['Runner'], ['Others']], @assignment.present? ? @assignment.assignment_type : nil),{}, placeholder: 'Assignment' ,class: ''%>
+                    <label for="">Task</label>
+                    <%= form.text_area :task , class: 'form-control'%>
                 </div>
-            </div>
-            <div class="col-6">
+
+                 </div>
+                <div class="col-4">
+
                         <!-- select -->
                 <div class="form-group">
                     <label>Select Rider</label>
@@ -70,14 +80,33 @@
                 </div>
                 <div class="form-group">
                     <label>Extra Notes for Rider</label>
-                    <%= form.text_field :extra_notes %>
+                    <%= form.text_area :extra_notes , class: 'form-control'%>
+                </div>
+
+                <div class="form-group">
+                    <label>Delivery Status</label>
+                    <%= form.select :delivery_status, options_for_select([['Completed'],['Pending'], ['Cancelled']], @assignment.present? ? @assignment.assignment_type : nil),{}, placeholder: 'Assignment' ,class: 'form-control'%>
+                </div>
                 </div>
             </div>
             </div>
             <!-- /.card-body -->
-            <div class="actions">
-    <%= form.submit %>
-  </div>
+    
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-4">
+                    </div>
+                    <div class="col-4">
+                        <td>
+                            <%= form.submit 'Submit', class: 'btn btn-primary' %>
+                            <%= link_to 'Show', @assignment, class: 'btn btn-info' %>
+                            <%= link_to 'Back', assignments_path, class: 'btn btn-secondary' %>
+                        </td>
+                    </div>
+                    <div class="col-4">
+                    </div>
+                </div>
+            </div>
 
         </form>
     </div>

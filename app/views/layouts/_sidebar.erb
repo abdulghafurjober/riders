@@ -28,16 +28,16 @@
         </li>
 
         <li class="nav-item has-treeview">
-        <a class="nav-link <%= controller_name == 'assignment' ? 'active' : nil%>" href="/assignment" data-no-turbolink='true'>
+        <a class="nav-link <%= controller_name == 'assignment' ? 'active' : nil%>" href="./" data-no-turbolink='true'>
             <i class="nav-icon fas fa-book"></i> 
             <p>Assignments</p>
             <i class="fas fa-angle-left right"></i>
         </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-                <a href="./assignment/index" class="nav-link">
+                <a href="./assigments" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Assignment Listings</p>
+                <%= link_to "Assignment" , assignments_path %>
               </a>
             </li>
             <li class="nav-item">
