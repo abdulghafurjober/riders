@@ -35,16 +35,10 @@
         </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-                <a href="./assigments" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <%= link_to "Assignment" , assignments_path %>
-              </a>
+                <%= link_to "Assignment" , assignments_path , class: "nav-link"%>
             </li>
             <li class="nav-item">
-              <a href="./assignment/new" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <%= link_to "Add Assignment" , new_assignment_path %>
-              </a>
+                <%= link_to "Add Assignment" , new_assignment_path , class: "nav-link"%>
             </li>
           </ul>
         </li>
@@ -58,18 +52,12 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./riders/index" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Riders Lists</p>
-              </a>
+              <%= link_to "Rider Lists" , riders_path , class: "nav-link"%>
             </li>
           </ul>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/riders/new" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Add Riders</p>
-              </a>
+              <%= link_to "Add Rider" , new_rider_path , class: "nav-link"%>
             </li>
           </ul>
         </li>
