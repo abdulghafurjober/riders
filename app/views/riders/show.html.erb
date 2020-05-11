@@ -59,6 +59,9 @@
                     <td>
                         <%= link_to 'Back', riders_path, class: "btn btn-info"%>
                     </td>
+                    <td>
+                        <%= link_to 'Destroy', rider_path, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger' %>
+                    </td>
                 </div>
                 <div class="col-4">
                 </div>
