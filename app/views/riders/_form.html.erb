@@ -1,15 +1,28 @@
-<!-- general form elements -->
-<div class="card card-primary">
-    <div class="card-header">
-        <h3 class="card-title">Riders Registration</h3>
+<%= form_with(model: rider, local: true) do |form| %>
+  <% if rider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rider.errors.count, "error") %> prohibited this assignment from being saved:</h2>
+
+      <ul>
+        <% rider.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     </div>
-    <!-- /.card-header -->
-<div class="col-12">
-    <!-- form start -->
-    <form role="form">
-        <div class="card-body">
+  <% end %>
+
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Rider Registration</h3>
+        </div>
+        <!-- /.card-header -->
+    <div class="col-12">
+        <!-- form start -->
+        <form role="form">
+            <div class="card-body">
             <div class="row">
-                <div class="col-6">
+            <div class="col-4">
                 <div class="form-group">
                     <label for="">Name</label>
                     <%= form.text_field :name, class: 'form-control'%>
@@ -26,23 +39,18 @@
                     <label for="">Address</label>
                     <%= form.text_area :location, class: 'form-control'%>
                 </div>
+                </div>
+                <div class="col-4">
+
                 <div class="form-group">
                     <label for="">Coverage Location</label>
                     <%= form.text_field :coverage_location, class: 'form-control'%>
                 </div>
-                </div>
-                <div class="col-6">
                 <div class="form-group">
-                        <!-- select -->
-                    <div class="form-group">
-                        <label>Select Status</label>
-                        <%= form.select :status, options_for_select([['Active'],['Quit'], ['On Leave'], ['Others']], @rider.present? ? @rider.status : nil),{}, placeholder: 'Status', class: 'form-control'%>
-                    </div>
+                    <label>Select Status</label>
+                    <%= form.select :status, options_for_select([['Active'],['Quit'], ['On Leave'], ['Others']], @rider.present? ? @rider.status : nil),{}, placeholder: 'Status', class: 'form-control'%>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputFile">IC Picture</label>
-                    <%= form.file_field :image , class: 'form-control'%>
-                    <div class="form-group">
                     <label for="">Bank Account Number</label>
                     <%= form.text_field :bankacc, placeholder: 'Bank Account Number', class: 'form-control'%>
                 </div>
@@ -50,27 +58,35 @@
                     <label for="">Bank Account Name</label>
                     <%= form.text_field :bankname, placeholder: 'Bank Account Name', class: 'form-control'%>
                 </div>
-                </div>
-                </div><!-- col-6 -->
-            </div> <!-- row -->
-        </div>
-        <!-- /.card-body -->
 
-        <div class="card-footer">
-            <div class="row">
+                 </div>
                 <div class="col-4">
+                <div class="form-group">
+                    <label for="exampleInputFile">IC Picture</label>
+                    <%= form.file_field :image , class: 'form-control'%>
                 </div>
-                <div class="col-4">
-                    <td>
-                        <%= form.submit 'Submit', class: 'btn btn-primary' %>
-                        <%= link_to 'Show', @rider, class: 'btn btn-info' %>
-                        <%= link_to 'Back', riders_path, class: 'btn btn-secondary' %>
-                    </td>
-                </div>
-                <div class="col-4">
                 </div>
             </div>
-        </div>
-    </form>
-</div><!-- col-12 close -->
-</div>
+            </div>
+            <!-- /.card-body -->
+    
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-4">
+                    </div>
+                    <div class="col-4">
+                        <td>
+                            <%= form.submit 'Submit', class: 'btn btn-primary' %>
+                            <%= link_to 'Show', @rider, class: 'btn btn-info' %>
+                            <%= link_to 'Back', riders_path, class: 'btn btn-secondary' %>
+                        </td>
+                    </div>
+                    <div class="col-4">
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    </div>
+<% end %>
