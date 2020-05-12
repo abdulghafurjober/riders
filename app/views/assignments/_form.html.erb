@@ -79,7 +79,7 @@
 
                 <div class="form-group">
                     <label>Delivery Status</label>
-                    <%= form.select :delivery_status, options_for_select([['Completed'],['Pending'], ['Cancelled']], @assignment.present? ? @assignment.assignment_type : nil),{}, placeholder: 'Assignment' ,class: 'form-control'%>
+                    <%= form.select :delivery_status, options_for_select([['Completed'],['Pending'], ['Cancelled']], @assignment.present? ? @assignment.delivery_status : nil),{}, placeholder: 'Delivery Status' ,class: 'form-control'%>
                 </div>
                 </div>
             </div>
