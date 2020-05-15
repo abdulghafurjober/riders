@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_031508) do
 
   create_table "riders", force: :cascade do |t|
     t.string "name"
-    t.string "ic"
+    t.string "IC"
     t.string "phone"
     t.string "location"
     t.string "status"
