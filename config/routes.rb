@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get '/riders/coverage/:area', to: 'riders#size', as: 'rider_size'
   get '/order', to: 'homes#order' 
   get '/tracking', to: 'homes#tracking' 
+  get '/dashboard', to: 'dashboard#index'
  
 end

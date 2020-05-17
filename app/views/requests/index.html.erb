@@ -13,6 +13,7 @@
             <th>Customer Phone</th>
             <th>Location</th>
             <th>Delivery area</th>
+            <th>Price (RM)</th>
             <th>Status</th>
             <th></th>
             <th></th>
@@ -25,7 +26,8 @@
                     <td><%= request.customer_name %></td>
                     <td><%= request.customer_phone %></td>
                     <td><%= request.date&.strftime('%d/%m/%Y %H:%M') %></td>
-                    <td><%= request.area %></td>                       
+                    <td><%= request.area %></td>
+                    <td><%= request.total_price %></td>                        
                     <td><span class="badge badge-success"><%= request.status %></span></td>
                     <td><%= link_to 'Show', request  ,class: 'btn btn-info '%></td>
                     <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger'%></td>

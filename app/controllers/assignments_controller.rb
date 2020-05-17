@@ -1,3 +1,4 @@
+
 class AssignmentsController < ApplicationController
     before_action :set_assignment, only: [:show, :edit, :update, :destroy]
   
@@ -29,6 +30,7 @@ class AssignmentsController < ApplicationController
   
       respond_to do |format|
         if @assignment.save
+          #SMS.send(@assignment.rider.phone, "Anda telah dapat pesanan delivery dari pihak Deliverypost. Sila lihat details di http://riders.test")
           format.html { redirect_to @assignment, notice: 'assignment was successfully created.' }
           format.json { render :show, status: :created, location: @assignment }
         else
