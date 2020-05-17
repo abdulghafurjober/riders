@@ -4,4 +4,10 @@ class HomesController < ApplicationController
 
     def index
     end
+
+    def order
+    end
+
+    def tracking
+    end
 end

@@ -5,11 +5,20 @@ class RidersController < ApplicationController
   # GET /riders.json
   def index
     @riders = Rider.all
+    respond_to do |format|
+        format.html { render :index}
+        format.json { render json: @rider.size}
+    end
   end
 
   # GET /riders/1
   # GET /riders/1.json
   def show
+  end
+
+  def size
+    @riders = Rider.where('location ilike ?', "%#{:area}%")
+    render json: @riders.size
   end
 
   # GET /riders/new

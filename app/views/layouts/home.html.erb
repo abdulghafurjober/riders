@@ -6,7 +6,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'landing-pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css', media: 'all', 'data-turbolinks-track': 'reload'%>
     <script src="https://kit.fontawesome.com/e91f5fd90a.js" crossorigin="anonymous"></script>
+      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', media: 'all'%>
+        <%= javascript_include_tag 'https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', media: 'all', 'data-turbolinks-track': 'reload' %>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+    
    
 </head>
 
@@ -15,6 +23,7 @@
         <!-- Start Main Banner Area -->
         <div class="main-banner main-banner-two">
             <div class="container-fluid">
+                <%if controller.controller_name == 'homes' && controller.action_name == 'index'%>
                 <div class="row">
                     <div class="col-lg-7 col-md-12">
                         <div class="main-banner-content">
@@ -38,6 +47,8 @@
                         </div>
                     </div>
                 </div>
+
+                <% end %>
             </div>
 
             <div class="shape20"><img src="/assets/shape/19.png" alt="image"></div>
@@ -50,305 +61,108 @@
         </div>
         <!-- End Main Banner Area -->
 
-        <!-- Start Features Card -->
-        <div class="features-card-section pt-100 pb-70 bg-f8fbfa">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-features-card blt-radius-0">
-                            <i class='bx bx-conversation blt-radius-0'></i>
-                            <h3>
-                                <a href="#">Dispatch</a>
-                            </h3>
-                            <p>Penghantaran surat / produk pada hari yang sama jarak sehingga 40KM.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-features-card blt-radius-0">
-                            <i class='bx bx-laptop blt-radius-0'></i>
-                            <h3>
-                                <a href="#">Makanan</a>
-                            </h3>
-                            <p>Pembelian makanan yang fleksible dan memudahkan tanpa perlu keluar rumah.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-features-card blt-radius-0">
-                            <i class='bx bxs-badge-check blt-radius-0'></i>
-                            <h3>
-                                <a href="#">Barangan</a>
-                            </h3>
-                            <p>Pembelian barangan apa sahaja termasuk barangan basah boleh di minta.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-features-card blt-radius-0">
-                            <i class='bx bxs-megaphone blt-radius-0'></i>
-                            <h3>
-                                <a href="#">Kejutan</a>
-                            </h3>
-                            <p>Suprise delivery juga di lakukan pada hari yang sama atau pada tarikh yang di pilih.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Features Card -->
-
-        <!-- Start Services Area -->
-        <section class="services-area bg-left-color bg-left-shape bg-f4f6fc ptb-100">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="services-image">
-                        <div class="image">
-                            <%= image_tag('delivery')%>
-                        </div>
-                    </div>
-
-                    <div class="services-content it-service-content">
-                        <div class="content">
-                            <div class="icon">
-                                <%= image_tag('logo-white', size: '150x150')%>
-                            </div>
-                            <h2>Kira harga penghantaran anda</h2>
-                            <p>Pilih jenis penghataran yang anda ingin lakukan.</p>
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="feature-box">
-                                        <i class='fa fa-circle'></i>  
-                                        Despatch
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="feature-box">
-                                        <i class='fa fa-circle'></i> 
-                                        Kejutan
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="feature-box">
-                                        <i class='fa fa-circle'></i> 
-                                        Barangan
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="feature-box">
-                                        <i class='fa fa-circle'></i> 
-                                        Makanan
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Services Area -->
-
-        <!-- Start Features Area -->
-        <section class="features-area pt-100 pb-70">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Kenapa pilih kami</h2>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="features-box">
-                            <div class="icon">
-                                <i class='fa fa-life-ring'></i>
-                            </div>
-                            <h3>Insurance</h3>
-                            <p>Pihak Deliverypost akan cover sehingga RM200 nilai barangan anda jika terdapat sebarang kerosakan atau kehilangan dari pihak kami.</p>
-
-                            <div class="back-icon">
-                                <i class='bx bx-conversation'></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="features-box">
-                            <div class="icon">
-                                <i class='fa fa-shipping-fast'></i>
-                            </div>
-                            <h3>Pantas</h3>
-                            <p>Penghantaran pada hari yang sama juga boleh di lakukan pada harga yang mampu milik. Boleh juga pilih tarikh untuk penghataran anda.</p>
-
-                            <div class="back-icon">
-                                <i class='bx bxs-badge-check'></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="features-box">
-                            <div class="icon">
-                                <i class='fa fa-smile'></i>
-                            </div>
-                            <h3>Mudah</h3>
-                            <p>Tiada sebarang aplikasi perlu di pasang di telefon bimbit anda. Tempahan boleh dilakukan secara atas talian serta Whatsapp atau SMS.</p>
-
-                            <div class="back-icon">
-                                <i class='bx bxs-dashboard'></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-sm-6">
-                        <div class="features-box">
-                            <div class="icon">
-                                <i class='fa fa-money-bill-wave'></i>
-                            </div>
-                            <h3>Jimat</h3>
-                            <p>Kos penghantaran anda akan jadi lebih jimat jika anda menggunakan servis kami. Lebih jauh jarak penghantaran anda lebih jimat kos yang anda keluarkan.</p>
-
-                            <div class="back-icon">
-                                <i class='bx bxs-bell-ring'></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-sm-6">
-                        <div class="features-box">
-                            <div class="icon">
-                                <i class='fa fa-star'></i>
-                            </div>
-                            <h3>Professional</h3>
-                            <p>Rider / penghantar kami adalah dari penghantar yang sangat professional. Kami akan menugaskan penghantar yang berdekatan dengan alamat pengambilan.</p>
-
-                            <div class="back-icon">
-                                <i class='bx bxs-info-circle'></i>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!-- End Features Area -->
- 
-        <!-- Start FAQ Area -->
-        <section class="faq-area ptb-100 bg-color-f4f5fe">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-7 col-md-12">
-                        <div class="faq-accordion">
-                            <h2>FAQ</h2>
-
-                            <ul class="accordion">
-                                <li class="accordion-item active">
-                                    <a class="accordion-title" href="javascript:void(0)">
-                                        <i class="bx bx-plus"></i>
-                                        What access do I have on the free plan?
-                                    </a>
-
-                                    <p class="accordion-content show">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                    </p>
-                                </li>
-                                
-                                <li class="accordion-item">
-                                    <a class="accordion-title" href="javascript:void(0)">
-                                        <i class="bx bx-plus"></i>
-                                        What access do I have on a free trial?
-                                    </a>
-
-                                    <p class="accordion-content">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                    </p>
-                                </li>
-                                
-                                <li class="accordion-item">
-                                    <a class="accordion-title" href="javascript:void(0)">
-                                        <i class="bx bx-plus"></i>
-                                        Does the price go up as my team gets larger?
-                                    </a>
-
-                                    <p class="accordion-content">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                    </p>
-                                </li>
-
-                                <li class="accordion-item">
-                                    <a class="accordion-title" href="javascript:void(0)">
-                                        <i class="bx bx-plus"></i>
-                                        How can I cancel/pause my subscription?
-                                    </a>
-
-                                    <p class="accordion-content">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                    </p>
-                                </li>
-                                
-                                <li class="accordion-item">
-                                    <a class="accordion-title" href="javascript:void(0)">
-                                        <i class="bx bx-plus"></i>
-                                        Can I pay via an invoice?
-                                    </a>
-
-                                    <p class="accordion-content">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-5 col-md-12">
-                        <div class="faq-image">
-                            <img src="/assets/faq-img1.png" alt="image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End FAQ Area -->
-
-        <!-- Start Subscribe Area -->
-        <section class="subscribe-area bg-f4f5fe">
-            <div class="container">
-                <div class="subscribe-content">
-                    <h2>Dapatkan update terkini dari kami</h2>
-
-                    <form class="newsletter-form" data-toggle="validator">
-                        <div class="row align-items-center">
-                            <div class="col-lg-8 col-md-8">
-                                <input type="email" class="input-newsletter" placeholder="hello@deliverypost.co" name="EMAIL" required autocomplete="off">
-                            </div>
-
-                            <div class="col-lg-4 col-md-4">
-                                <button type="submit"><i class="bx bxs-hot"></i> Subscribe Now</button>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12">
-                                <div id="validator-newsletter" class="form-result"></div>
-                            </div>
-                        </div>
-                    </form>
-
-                    <div class="shape14"><img src="/assets/shape/13.png" alt="image"></div>
-                    <div class="shape15"><img src="/assets/shape/14.png" alt="image"></div>
-                    <div class="shape16"><img src="/assets/shape/15.png" alt="image"></div>
-                    <div class="shape17"><img src="/assets/shape/16.png" alt="image"></div>
-                    <div class="shape18"><img src="/assets/shape/17.png" alt="image"></div>
-                </div>
-            </div>
-        </section>
-        <!-- End Subscribe Area -->
+        <%= yield %>
 
  
         <!-- Start Footer Area -->
         <%= render partial: '/layouts/homes/footer'%>
-        <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', media: 'all', 'data-turbolinks-track': 'reload' %>
+      
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvCBYvebRTNeditorsX6d9XSO7qFHPNHg&libraries=places&callback=initAutocomplete" async defer></script>
+        <script>
+           
+            $(function () {
+            $('#datetimepicker1').datetimepicker();
+
+            $(".accordion")
+                .find(".accordion-title")
+                .on("click", function () {
+                // Adds Active Class
+                $(this).toggleClass("active");
+                // Expand or Collapse This Panel
+                $(this).next().slideToggle("fast");
+                // Hide The Other Panels
+                $(".accordion-content").not($(this).next()).slideUp("fast");
+                // Removes Active Class From Other Titles
+                $(".accordion-title").not($(this)).removeClass("active");
+                });
+            });
+        </script>
         <!-- End Footer Area -->
 
         <div class="go-top"><i class='bx bx-chevron-up'></i></div>
     </body>
 </html>
+<script>
+    $('.price-details').hide()
+    var autocomplete, p_lat, p_lng, d_lat, d_lng;
+    var delivery_cost = 4.90
+
+    function initAutocomplete() {
+      autocomplete = new google.maps.places.Autocomplete(
+        /** @type {HTMLInputElement} */
+        (document.getElementById('pickup-address')),
+        {componentRestrictions: {country: "my"}}
+      );
+      autocomplete_delivery = new google.maps.places.Autocomplete(
+        /** @type {HTMLInputElement} */
+        (document.getElementById('delivery-address')),
+        {componentRestrictions: {country: "my"}}
+      );
+      google.maps.event.addListener(autocomplete, 'place_changed', function() {
+          p_lat = autocomplete.getPlace().geometry.location.lat()
+          p_lng = autocomplete.getPlace().geometry.location.lng()
+      });
+     google.maps.event.addListener(autocomplete_delivery, 'place_changed', function() {
+        d_lat = autocomplete_delivery.getPlace().geometry.location.lat()
+        d_lng = autocomplete_delivery.getPlace().geometry.location.lng()
+      });
+
+    $('#calc-price').click(function(){
+        var origin = new google.maps.LatLng(p_lat, p_lng);
+        var dest = new google.maps.LatLng(d_lat, d_lng);
+        const service = new google.maps.DistanceMatrixService(); // instantiate Distance Matrix service
+        var selection = $('#jenis-penghantaran').val()
+        if(selection == '0'){
+            delivery_cost = 4.93
+        } else if( selection == '1'){
+            delivery_cost = 4.80
+        } else if(selection == '2'){
+            delivery_cost = 4.95
+        } else {
+            delivery_cost = 6.50
+        }
+
+        const matrixOptions = {
+            origins: [origin], // technician locations
+            destinations: [dest], // customer address
+            travelMode: 'DRIVING',
+            unitSystem: google.maps.UnitSystem.IMPERIAL
+        };
+        // Call Distance Matrix service
+        service.getDistanceMatrix(matrixOptions, callback);
+
+        // Callback function used to process Distance Matrix response
+        function callback(response, status) {
+            if (status !== "OK") {
+            alert("Maaf sila cuba sekali lagi");
+            return;
+            }
+            var total_price = ((response.rows[0].elements[0].distance.value / 1000 - 5) * 0.92 + delivery_cost).toFixed(2)
+            var distance = response.rows[0].elements[0].distance.value / 1000
+            var duration = response.rows[0].elements[0].duration.text
+            $('.price-details').show()
+            $('#price').text("RM" + total_price)
+            $('#distance').text((distance) + "KM")
+            $('#duration').text(duration)
+            $('#delivery-type').val(selection)
+            $('#delivery-date').val($('#datetimepicker').val())
+            $('#delivery-price').val(total_price)
+            $('#delivery-distance').val(distance)
+            $('#delivery-duration').val(duration)
+        }
+    })
+    
+    }
+
+   
+</script>

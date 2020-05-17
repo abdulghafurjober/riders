@@ -1,0 +1,37 @@
+ 
+  <!-- Start Page Title Area -->
+    <div class="page-title-area pb-5">
+        <div class="container">
+            <div class="page-title-content">
+                <h2>Semak pembayaran</h2>
+            </div>
+        </div>
+    </div>
+
+    <section class="features-area pt-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="login-content" style="max-height: 600px">
+                        <div class="login-form">
+                            <h5>Kami sedang semak pembayaran anda...</h5>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<script>
+var status = <%= params[:status_id] %>
+if(status == '1'){
+
+    // Your application has indicated there's an error
+    window.setTimeout(function(){
+
+        // Move to a new location or you can do something else
+        window.location.href = "http://riders.test/payment/success";
+
+    }, 5000);
+
+}
+</script>

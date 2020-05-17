@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_031508) do
+ActiveRecord::Schema.define(version: 2020_05_17_072044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,29 @@ ActiveRecord::Schema.define(version: 2020_05_11_031508) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "delivery_status"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.datetime "date"
+    t.boolean "insurance", default: false
+    t.text "delivery_type"
+    t.text "customer_name"
+    t.text "customer_phone"
+    t.text "customer_address"
+    t.text "pickup_name"
+    t.text "pickup_phone"
+    t.text "pickup_address"
+    t.text "notes"
+    t.text "additional_notes"
+    t.text "area"
+    t.text "total_price", default: "0"
+    t.text "distance"
+    t.text "duration"
+    t.text "status", default: "pending"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.text "customer_email"
+    t.text "billcode"
   end
 
   create_table "riders", force: :cascade do |t|
