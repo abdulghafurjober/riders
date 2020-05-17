@@ -1,4 +1,12 @@
 class RequestsController < ApplicationController
+    before_action :get_request, only: :show
+
+    def index
+        @requests = Request.all.order(created_at: :desc)
+    end
+
+    def show
+    end
 
     def create
         @request = Request.new(request_params)
@@ -24,5 +32,9 @@ class RequestsController < ApplicationController
     def request_params
         params.require(:request).permit(:date, :customer_name, :customer_phone, :customer_address, :pickup_name, :pickup_phone, :pickup_address,
                                         :notes, :additional_notes, :area, :total_price, :distance, :duration, :insurance, :delivery_type, :customer_email)
+    end
+
+    def get_request
+        @request = Request.find(params[:id])
     end
 end
