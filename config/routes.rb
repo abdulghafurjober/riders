@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/payment/success', to: 'payments#success', as: :payment_success
   get '/riders/coverage/:area', to: 'riders#size', as: 'rider_size'
   get '/order', to: 'homes#order' 
+  get '/job/:unique_code', to: 'homes#job'
   get '/tracking', to: 'homes#tracking' 
   get '/dashboard', to: 'dashboard#index'
  

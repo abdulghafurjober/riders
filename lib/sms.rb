@@ -1,6 +1,6 @@
 
 
-module SMS
+module Sms
     require "httparty"
   
     def self.send(recipient, message)
@@ -13,12 +13,13 @@ module SMS
       })
       if @result
         @send = HTTParty.post("https://connect.routee.net/sms", {
-          body: {"body" => "#{message}", "from" => 'Deliverypost', 'to' => "+#{recipient}"}.to_json,
+          body: {"body" => "#{message}", "from" => 'Fasttrade', 'to' => "+#{recipient}"}.to_json,
           headers: {
             "Content-Type" => "application/json",
             "Authorization" => "Bearer #{@result['access_token']}",
           },
         })
+        Rails.logger.info "WOIIIII#{@send}"
         return @send
       end
     end

@@ -30,7 +30,7 @@ class AssignmentsController < ApplicationController
   
       respond_to do |format|
         if @assignment.save
-          #SMS.send(@assignment.rider.phone, "Anda telah dapat pesanan delivery dari pihak Deliverypost. Sila lihat details di http://riders.test")
+          Sms.send(@assignment.rider.phone, "Anda telah dapat pesanan delivery dari pihak Deliverypost. Sila lihat maklumat pesanan di http://riders.test/job/#{@assignment.unique_code}")
           format.html { redirect_to @assignment, notice: 'assignment was successfully created.' }
           format.json { render :show, status: :created, location: @assignment }
         else
@@ -72,7 +72,9 @@ class AssignmentsController < ApplicationController
   
       # Only allow a list of trusted parameters through.
       def assignment_params
-        params.require(:assignment).permit(:vendor_name, :vendor_phone, :vendor_email, :customer_name, :customer_phone, :pickup_address, :dropoff_address, :assignment_type, :task, :rider_id, :extra_notes, :delivery_status)
+        params.require(:assignment).permit(:vendor_name, :vendor_phone, :vendor_email, :customer_name, :customer_phone, :pickup_address, :dropoff_address, 
+                                            :assignment_type, :task, :rider_id, :extra_notes, :delivery_status,
+                                            :assignment_date)
       end
   end
   

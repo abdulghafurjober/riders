@@ -10,4 +10,9 @@ class HomesController < ApplicationController
 
     def tracking
     end
+
+    def job
+        @job = Assignment.find_by_unique_code(params[:unique_code])
+    end
+    
 end

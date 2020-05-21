@@ -55,9 +55,13 @@
                     <%= form.text_field :vendor_email , class: 'form-control'%>
                 </div>
                
-             <div class="form-group">
+                <div class="form-group">
                     <label>Assignment Type</label>
                     <%= form.select :assignment_type, options_for_select([['Food Delivery'],['Runner'], ['Dispatch'], ['Surprise']], @assignment.present? ? @assignment.assignment_type : nil),{}, placeholder: 'Assignment' ,class: 'form-control'%>
+                </div>
+                <div class="form-group">
+                    <label>Assignment Date</label>
+                    <%= form.text_field :assignment_date, placeholder: '21/4/2020' ,class: 'form-control'%>
                 </div>
                 <div class="form-group">
                     <label for="">Task</label>
