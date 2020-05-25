@@ -12,7 +12,7 @@
 	"RUN apt-get install -y ruby",
 	"RUN apt-get install -y postgresql",
 	"RUN apt-get install -y libpq-dev",
-	"RUN apt-get install -y build-essential patch ruby-dev zlib1g-dev liblzma-dev",
+	"RUN apt-get install -y build-essential patch ruby-dev zlib1g-dev liblzma-dev libxml2-dev",
 	"RUN apt-get install -y nodejs",
 	"RUN apt-get remove -y cmdtest",
 	"RUN npm install -g yarn",
@@ -29,7 +29,6 @@
 	"COPY ./ /usr/src/app",
 	"RUN apt-get install -y imagemagick",
 	"ENV RACK_ENV production",
-	"EXPOSE 80",
 	"CMD [\"rackup\", \"config.ru\", \"--host\", \"0.0.0.0\", \"--port\", \"80\"]"
   ]
 }
