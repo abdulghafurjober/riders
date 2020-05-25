@@ -4,7 +4,7 @@
 	"FROM ubuntu:latest",
 	"RUN echo 'Etc/UTC' > /etc/timezone",
 	"RUN ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime",
-	"RUN apt-get update -qq && apt-get upgrade && apt-get install -y yarn",
+	"RUN apt-get update -qq -y && apt-get upgrade -y && apt-get install -y yarn",
 	"RUN apt-get install -y curl",
 	"RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -",
 	"RUN apt-get install -y tzdata",
