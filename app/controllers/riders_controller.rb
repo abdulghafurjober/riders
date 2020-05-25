@@ -17,7 +17,7 @@ class RidersController < ApplicationController
   end
 
   def size
-    @riders = Rider.where('location ilike ?', "%#{:area}%")
+    @riders = Rider.where('location ilike ?', "%#{params[:area]}%")
     render json: @riders.size
   end
 

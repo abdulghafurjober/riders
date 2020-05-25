@@ -115,6 +115,7 @@
      google.maps.event.addListener(autocomplete_delivery, 'place_changed', function() {
         d_lat = autocomplete_delivery.getPlace().geometry.location.lat()
         d_lng = autocomplete_delivery.getPlace().geometry.location.lng()
+
       });
 
     $('#calc-price').click(function(){
@@ -159,6 +160,10 @@
             $('#delivery-price').val(total_price)
             $('#delivery-distance').val(distance)
             $('#delivery-duration').val(duration)
+            $('#d-lat').val(d_lat)
+            $('#d-lng').val(d_lng)
+            $('#p-lat').val(p_lat)
+            $('#p-lng').val(p_lng)
         }
     })
     

@@ -38,7 +38,7 @@
                                 <h5>No. Tel : <%= @job.vendor_phone%></h5>
                                 <small>
                                     <p>Alamat : <%= @job.pickup_address%></p>
-                                    <p>Link waze : </p>
+                                    <p>Link waze : <a href="https://www.waze.com/ul?ll=<%=@job.request.p_lat%>,<%= @job.request.p_lng%>&navigate=yes&zoom=17"> click here </a></p>
                                 </small>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                                 <h5>No. Tel : <%= @job.customer_phone%></h5>
                                 <small>
                                     <p>Alamat : <%= @job.dropoff_address%></p>
-                                    <p>Link waze : </p>
+                                    <p>Link waze :  <a href="https://www.waze.com/ul?ll=<%=@job.request.d_lat%>,<%= @job.request.d_lng%>&navigate=yes&zoom=17"> click here </a></p>
                                 </small>
                             </div>
                         </div>

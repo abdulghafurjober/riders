@@ -23,10 +23,10 @@
                                 <div class="form-group text-left">
                                     <label for="jenis-penghantaran">Jenis penghantaran</label>
                                     <select class="form-control" id="jenis-penghantaran">
-                                    <option value='0'>Dispatch ( < 3kg )</option>
-                                    <option value='1'>Makanan ( < 5kg )</option>
-                                    <option value='2'>Runner ( < 10kg )</option>
-                                    <option value='3'>Kejutan ( < 5kg )</option>
+                                    <option value='0' <%= params[:type] == '0' ? 'selected' : ''%>>Dispatch ( < 3kg )</option>
+                                    <option value='1'  <%= params[:type] == '1' ? 'selected' : ''%>>Makanan ( < 5kg )</option>
+                                    <option value='2'  <%= params[:type] == '2' ? 'selected' : ''%>>Runner ( < 10kg )</option>
+                                    <option value='3'  <%= params[:type] == '3' ? 'selected' : ''%>>Kejutan ( < 5kg )</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -78,6 +78,10 @@
                             <%= f.hidden_field :total_price, id: 'delivery-price'%>
                             <%= f.hidden_field :distance, id: 'delivery-distance'%>
                             <%= f.hidden_field :duration, id: 'delivery-duration'%>
+                            <%= f.hidden_field :p_lat, id: 'p-lat'%>
+                            <%= f.hidden_field :p_lng, id: 'p-lng'%>
+                            <%= f.hidden_field :d_lat, id: 'd-lat'%>
+                            <%= f.hidden_field :d_lng, id: 'd-lng'%>
                             <div class="text-left">
                                 <h5>Maklumat anda</h5>
                             </div>

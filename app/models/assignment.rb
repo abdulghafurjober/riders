@@ -1,6 +1,7 @@
 class Assignment < ApplicationRecord
     before_create :create_unique_identifier
     belongs_to :rider
+    belongs_to :request
     
 
     def create_unique_identifier

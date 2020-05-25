@@ -9,6 +9,7 @@ class RequestsController < ApplicationController
     end
 
     def create
+        @url = Rails.env.development? ? 'dev.toyyibpay.com' : 'toyyibpay.com'
         @request = Request.new(request_params)
         if @request.save
             @initiate = Toyyibpay::Bill.new({
@@ -21,7 +22,7 @@ class RequestsController < ApplicationController
                                         })                       
             if @initiate.execute
                 @request.update(billcode: @initiate.code)
-                redirect_to "https://toyyibpay.com/#{@initiate.code}"
+                redirect_to "https://#{@url}/#{@initiate.code}"
             end
         end
     end
@@ -31,7 +32,8 @@ class RequestsController < ApplicationController
 
     def request_params
         params.require(:request).permit(:date, :customer_name, :customer_phone, :customer_address, :pickup_name, :pickup_phone, :pickup_address,
-                                        :notes, :additional_notes, :area, :total_price, :distance, :duration, :insurance, :delivery_type, :customer_email)
+                                        :notes, :additional_notes, :area, :total_price, :distance, :duration, :insurance, :delivery_type, :customer_email,
+                                        :p_lat, :p_lng, :d_lat, :d_lng)
     end
 
     def get_request

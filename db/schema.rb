@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_21_164834) do
+ActiveRecord::Schema.define(version: 2020_05_22_144319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2020_05_21_164834) do
     t.string "delivery_status"
     t.text "unique_code"
     t.text "assignment_date"
+    t.bigint "request_id"
+    t.index ["request_id"], name: "index_assignments_on_request_id"
   end
 
   create_table "requests", force: :cascade do |t|
@@ -55,6 +57,10 @@ ActiveRecord::Schema.define(version: 2020_05_21_164834) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "customer_email"
     t.text "billcode"
+    t.text "p_lat"
+    t.text "p_lng"
+    t.text "d_lat"
+    t.text "d_lng"
   end
 
   create_table "riders", force: :cascade do |t|

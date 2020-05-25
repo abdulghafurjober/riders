@@ -24,6 +24,10 @@
             <div class="row">
             <div class="col-4">
                 <div class="form-group">
+                    <label>Request ID</label>
+                    <%= form.select :request_id, options_for_select(Request.all.map { |r| [r.id, r.id]}),{}, placeholder: 'Assignment' ,class: 'form-control'%>
+                </div>
+                <div class="form-group">
                     <label for="">Customer Name</label>
                     <%= form.text_field :customer_name ,class: 'form-control' %>
                 </div>
@@ -74,7 +78,7 @@
                         <!-- select -->
                 <div class="form-group">
                     <label>Select Rider</label>
-                    <%= form.select :rider_id, options_for_select(Rider.all.map {|r| [r.name, r.id]}) , class: 'form-control'%>
+                    <%= form.select :rider_id, options_for_select(Rider.all.map {|r| [r.name, r.id]}), {} , class: 'form-control'%>
                 </div>
                 <div class="form-group">
                     <label>Extra Notes for Rider</label>
