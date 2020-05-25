@@ -1,0 +1,38 @@
+{
+ "schemaVersion" :2 ,
+  "dockerfileLines": [
+	"FROM ubuntu:latest",
+	"RUN echo 'Etc/UTC' > /etc/timezone",
+	"RUN ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime",
+	"RUN apt-get update -qq && apt-get upgrade && apt-get install -y yarn",
+	"RUN apt-get install -y curl",
+	"RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -",
+	"RUN apt-get install -y tzdata",
+	"RUN apt-get install -y git",
+	"RUN apt-get install -y ruby",
+	"RUN apt-get install -y postgresql",
+	"RUN apt-get install -y libpq-dev",
+	"RUN apt-get install -y build-essential patch ruby-dev zlib1g-dev liblzma-dev",
+	"RUN apt-get install -y nodejs",
+	"RUN apt-get remove -y cmdtest",
+	"RUN npm install -g yarn",
+	"RUN mkdir -p /usr/src/app",
+	"WORKDIR /usr/src/app",
+	"RUN gem install bundler",
+	"ADD ./Gemfile /usr/src/app/",
+	"COPY ./ /usr/src/app",
+	"RUN bundle install",
+	"RUN bundle exec rake yarn:install",
+	"RUN yarn add @rails/webpacker",
+	"RUN bundle update webpacker",
+	"RUN bundle exec rake assets:precompile",
+	"COPY ./ /usr/src/app",
+	"RUN apt-get install -y imagemagick",
+	"ENV RACK_ENV production",
+	"EXPOSE 80",
+	"CMD [\"rackup\", \"config.ru\", \"--host\", \"0.0.0.0\", \"--port\", \"80\"]"
+  ]
+}
+
+
+
