@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2020-05-17 08:59:59
+  customer_name: MyText
+  customer_phone: MyText
+  customer_address: MyText
+  pickup_name: MyText
+  pickup_phone: MyText
+  pickup_address: MyText
+  notes: MyText
+  additional_notes: MyText
+  area: MyText
+  total_price: MyText
+  distance: MyText
+  duration: MyText
+  status: MyText
+
+two:
+  date: 2020-05-17 08:59:59
+  customer_name: MyText
+  customer_phone: MyText
+  customer_address: MyText
+  pickup_name: MyText
+  pickup_phone: MyText
+  pickup_address: MyText
+  notes: MyText
+  additional_notes: MyText
+  area: MyText
+  total_price: MyText
+  distance: MyText
+  duration: MyText
+  status: MyText

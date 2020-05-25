@@ -1,0 +1,66 @@
+ 
+  <!-- Start Page Title Area -->
+    <div class="page-title-area pb-5">
+        <div class="container">
+            <div class="page-title-content">
+                <h2>Maklumat penghantaran</h2>
+            </div>
+        </div>
+    </div>
+
+  <section class="testimonials-area pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 offset-lg-3 offset-md-3 offset-sm-3">
+                        <div class="single-testimonials-item">
+                            <div class="client-info">
+                                <%= image_tag('question')%>
+                            </div>
+                            <div class="testimonials-desc">
+                                <p>Maklumat pekerjaan</p>
+                                <h3>Jenis : <%= @job.assignment_type %></h3>
+                                <small>
+                                    <p>Nota : <%= @job.task%></p>
+                                    <p>Alamat : <%= @job.pickup_address%></p>
+                                    <p>Tarikh : <%= @job.assignment_date%></p>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 offset-lg-3 offset-md-3 offset-sm-3">
+                        <div class="single-testimonials-item">
+                            <div class="client-info">
+                                <%= image_tag('question')%>
+                            </div>
+                            <div class="testimonials-desc">
+                                <p>Maklumat pengambilan</p>
+                                <h3>Nama : <%= @job.vendor_name %></h3>
+                                <h5>No. Tel : <%= @job.vendor_phone%></h5>
+                                <small>
+                                    <p>Alamat : <%= @job.pickup_address%></p>
+                                    <p>Link waze : <a href="https://www.waze.com/ul?ll=<%=@job.request.p_lat%>,<%= @job.request.p_lng%>&navigate=yes&zoom=17"> click here </a></p>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 offset-lg-3 offset-md-3 offset-sm-3">
+                        <div class="single-testimonials-item">
+                            <div class="client-info">
+                                <%= image_tag('question')%>
+                            </div>
+
+                            <div class="testimonials-desc">
+                                 <p>Maklumat penghantaran</p>
+                                <h3>Nama : <%= @job.customer_name %></h3>
+                                <h5>No. Tel : <%= @job.customer_phone%></h5>
+                                <small>
+                                    <p>Alamat : <%= @job.dropoff_address%></p>
+                                    <p>Link waze :  <a href="https://www.waze.com/ul?ll=<%=@job.request.d_lat%>,<%= @job.request.d_lng%>&navigate=yes&zoom=17"> click here </a></p>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    

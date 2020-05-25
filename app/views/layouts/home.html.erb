@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Riders</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'landing-pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css', media: 'all', 'data-turbolinks-track': 'reload'%>
+    <script src="https://kit.fontawesome.com/e91f5fd90a.js" crossorigin="anonymous"></script>
+      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js', media: 'all'%>
+        <%= javascript_include_tag 'https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', media: 'all', 'data-turbolinks-track': 'reload' %>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+    
+   
+</head>
+
+  <body>
+        <%= render partial: '/layouts/homes/navbar'%>
+        <!-- Start Main Banner Area -->
+        <div class="main-banner main-banner-two">
+            <div class="container-fluid">
+                <%if controller.controller_name == 'homes' && controller.action_name == 'index'%>
+                <div class="row">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="main-banner-content">
+                            <div class="d-table">
+                                <div class="d-table-cell">
+                                    <div class="content">
+                                        <h1>Penghantaran terpantas seluruh Malaysia.</h1>
+                                        <p>Bermula dengan serendah RM4.80 untuk penghantaran seluruh Malaysia. Hantar atau ambil apa saja yang anda perlukan bersama Deliverypost.</p>
+                                        <p><small>*Tiada aplikasi yang perlu di pasang dan permintaan penghantaran sepenuhnya secara <i>online</i>.</small></p>
+
+                                        <a href="contact.html" class="default-btn">Tempahan</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-md-12">
+                        <div class="banner-image-slider owl-carousel owl-theme">
+                            <div class="banner-image banner-slider-bg2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <% end %>
+            </div>
+
+            <div class="shape20"><img src="/assets/shape/19.png" alt="image"></div>
+            <div class="shape21"><img src="/assets/shape/20.png" alt="image"></div>
+            <div class="shape19"><img src="/assets/shape/18.png" alt="image"></div>
+            <div class="shape22"><img src="/assets/shape/21.png" alt="image"></div>
+            <div class="shape23"><img src="/assets/shape/22.svg" alt="image"></div>
+            <div class="shape24"><img src="/assets/shape/23.png" alt="image"></div>
+            <div class="shape26"><img src="/assets/shape/25.png" alt="image"></div>
+        </div>
+        <!-- End Main Banner Area -->
+
+        <%= yield %>
+
+ 
+        <!-- Start Footer Area -->
+        <%= render partial: '/layouts/homes/footer'%>
+      
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvCBYvebRTNeditorsX6d9XSO7qFHPNHg&libraries=places&callback=initAutocomplete" async defer></script>
+        <script>
+           
+            $(function () {
+            $('#datetimepicker1').datetimepicker();
+
+            $(".accordion")
+                .find(".accordion-title")
+                .on("click", function () {
+                // Adds Active Class
+                $(this).toggleClass("active");
+                // Expand or Collapse This Panel
+                $(this).next().slideToggle("fast");
+                // Hide The Other Panels
+                $(".accordion-content").not($(this).next()).slideUp("fast");
+                // Removes Active Class From Other Titles
+                $(".accordion-title").not($(this)).removeClass("active");
+                });
+            });
+        </script>
+        <!-- End Footer Area -->
+
+        <div class="go-top"><i class='bx bx-chevron-up'></i></div>
+    </body>
+</html>
+<script>
+    $('.price-details').hide()
+    var autocomplete, p_lat, p_lng, d_lat, d_lng;
+    var delivery_cost = 4.90
+
+    function initAutocomplete() {
+      autocomplete = new google.maps.places.Autocomplete(
+        /** @type {HTMLInputElement} */
+        (document.getElementById('pickup-address')),
+        {componentRestrictions: {country: "my"}}
+      );
+      autocomplete_delivery = new google.maps.places.Autocomplete(
+        /** @type {HTMLInputElement} */
+        (document.getElementById('delivery-address')),
+        {componentRestrictions: {country: "my"}}
+      );
+      google.maps.event.addListener(autocomplete, 'place_changed', function() {
+          p_lat = autocomplete.getPlace().geometry.location.lat()
+          p_lng = autocomplete.getPlace().geometry.location.lng()
+      });
+     google.maps.event.addListener(autocomplete_delivery, 'place_changed', function() {
+        d_lat = autocomplete_delivery.getPlace().geometry.location.lat()
+        d_lng = autocomplete_delivery.getPlace().geometry.location.lng()
+
+      });
+
+    $('#calc-price').click(function(){
+        var origin = new google.maps.LatLng(p_lat, p_lng);
+        var dest = new google.maps.LatLng(d_lat, d_lng);
+        const service = new google.maps.DistanceMatrixService(); // instantiate Distance Matrix service
+        var selection = $('#jenis-penghantaran').val()
+        if(selection == '0'){
+            delivery_cost = 4.93
+        } else if( selection == '1'){
+            delivery_cost = 4.80
+        } else if(selection == '2'){
+            delivery_cost = 4.95
+        } else {
+            delivery_cost = 6.50
+        }
+
+        const matrixOptions = {
+            origins: [origin], // technician locations
+            destinations: [dest], // customer address
+            travelMode: 'DRIVING',
+            unitSystem: google.maps.UnitSystem.IMPERIAL
+        };
+        // Call Distance Matrix service
+        service.getDistanceMatrix(matrixOptions, callback);
+
+        // Callback function used to process Distance Matrix response
+        function callback(response, status) {
+            if (status !== "OK") {
+            alert("Maaf sila cuba sekali lagi");
+            return;
+            }
+            var total_price = ((response.rows[0].elements[0].distance.value / 1000 - 5) * 0.92 + delivery_cost).toFixed(2)
+            var distance = response.rows[0].elements[0].distance.value / 1000
+            var duration = response.rows[0].elements[0].duration.text
+            $('.price-details').show()
+            $('#price').text("RM" + total_price)
+            $('#distance').text((distance) + "KM")
+            $('#duration').text(duration)
+            $('#delivery-type').val(selection)
+            $('#delivery-date').val($('#datetimepicker').val())
+            $('#delivery-price').val(total_price)
+            $('#delivery-distance').val(distance)
+            $('#delivery-duration').val(duration)
+            $('#d-lat').val(d_lat)
+            $('#d-lng').val(d_lng)
+            $('#p-lat').val(p_lat)
+            $('#p-lng').val(p_lng)
+        }
+    })
+    
+    }
+
+   
+</script>

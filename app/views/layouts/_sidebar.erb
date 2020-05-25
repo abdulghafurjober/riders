@@ -28,6 +28,13 @@
         </li>
 
         <li class="nav-item has-treeview">
+          <a class="nav-link <%= controller_name == 'requests' ? 'active' : nil%>" href="/requests">
+            <i class="nav-icon fas fa-calendar-alt"></i> 
+            <p>Requests</p>
+          </a>
+        </li>
+
+        <li class="nav-item has-treeview">
         <a class="nav-link <%= controller_name == 'assignment' ? 'active' : nil%>" href="./" data-no-turbolink='true'>
             <i class="nav-icon fas fa-book"></i> 
             <p>Assignments</p>
